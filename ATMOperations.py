@@ -5,9 +5,11 @@ def deposit():
     if(damt<=0):  #exception
         raise DepositError
     else:
-        tbal=damt+bal
+        global bal
+        bal=damt+bal
         print(" Ur Account xxxxxxx123 Credited INR:{}".format(damt))
-        print("Now Ur Account xxxxxx123 Remaining INR:{}".format(tbal))
+        print("Now Ur Account xxxxxx123 Remaining INR:{}".format(bal))
+
 def withdraw():
     global bal
     wamt=float(input("Enter the WithDraw Amount:"))
@@ -16,11 +18,11 @@ def withdraw():
     if(wamt+500>bal):  #1000+500>1000
             raise InSuffFundError
     else:
-        tbal=bal-wamt
+        bal=bal-wamt
         print("Ur Account xxxxxx123 is Debitted INR:{}".format(wamt))
-        print("Now Ur Account xxxxxx123 Currently INR:{}".format(tbal))
+        print("Now Ur Account xxxxxx123 Currently INR:{}".format(bal))
 def balenq():
-    print("Ur Account xxxxxxx123 Current INR:{}".format(bal))
+        print("Ur Account xxxxxxx123 Current INR:{}".format(bal))
 
 
 
